@@ -914,5 +914,6 @@
         "in" : "header"
       }
     }
-  }
+  },
+  "x-apigee-id" : "PetStore2"
 }

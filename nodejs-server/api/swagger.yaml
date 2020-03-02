@@ -776,3 +776,4 @@ components:
       type: apiKey
       name: api_key
       in: header
+x-apigee-id: PetStore2

@@ -69,6 +69,41 @@ paths:
         - write:pets
         - read:pets
       x-swagger-router-controller: Pet
+  /pet2:
+    put:
+      tags:
+      - pet
+      summary: Update an existing pet
+      operationId: updatePet2
+      requestBody:
+        $ref: '#/components/requestBodies/Pet'
+      responses:
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Pet not found
+        "405":
+          description: Validation exception
+      security:
+      - petstore_auth:
+        - write:pets
+        - read:pets
+      x-swagger-router-controller: Pet
+    post:
+      tags:
+      - pet
+      summary: Add a new pet to the store
+      operationId: addPet2
+      requestBody:
+        $ref: '#/components/requestBodies/Pet'
+      responses:
+        "405":
+          description: Invalid input
+      security:
+      - petstore_auth:
+        - write:pets
+        - read:pets
+      x-swagger-router-controller: Pet
   /pet/findByStatus:
     get:
       tags:

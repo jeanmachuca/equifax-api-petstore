@@ -14,6 +14,17 @@ module.exports.addPet = function addPet (req, res, next) {
     });
 };
 
+module.exports.addPet2 = function addPet2 (req, res, next) {
+  var body = req.swagger.params['body'].value;
+  Pet.addPet2(body)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
 module.exports.deletePet = function deletePet (req, res, next) {
   var petId = req.swagger.params['petId'].value;
   var api_key = req.swagger.params['api_key'].value;
@@ -62,6 +73,17 @@ module.exports.getPetById = function getPetById (req, res, next) {
 module.exports.updatePet = function updatePet (req, res, next) {
   var body = req.swagger.params['body'].value;
   Pet.updatePet(body)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
+module.exports.updatePet2 = function updatePet2 (req, res, next) {
+  var body = req.swagger.params['body'].value;
+  Pet.updatePet2(body)
     .then(function (response) {
       utils.writeJson(res, response);
     })
